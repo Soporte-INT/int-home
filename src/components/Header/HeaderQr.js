@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
-import Select from "../../app/intStore//Select";
+import Select from "../../app/home/Select";
 // eslint-disable-next-line
 import { I18n } from "aws-amplify/utils";
 import { NavLink } from "react-router-dom";
 import LogoTipo from "../../Img/Logotipo.png";
-import LogoEspanol from "../../Img/tagEspanol.png";
+import LogoEspanol from "../../assets/tagEspanol.png";
 // eslint-disable-next-line
 const HeaderQr = ({ selectedOption, handler, executeScroll }) => {
   const [isOpen, setIsOpen] = useState(false);

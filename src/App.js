@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Ecommerce from "./app/intStore/Ecommerce";
-import RegistroPrincipal from "./app/intStore/Registro_Principal";
-import Gracias from "./app/intStore/Gracias";
-import RegistroEcommerce from "./app/intStore/Registro_Ecommerce";
-import RegistroTerminal from "./app/intStore/Registro_Terminal";
-import Error404 from "./app/intStore/Error404";
-import Index from "./app/intStore/Index2";
-import Terminal from "./app/intStore/Terminal";
+import Ecommerce from "./app/home/Ecommerce";
+import RegistroPrincipal from "./app/home/Registro_Principal";
+import Gracias from "./app/home/Gracias";
+import RegistroEcommerce from "./app/home/Registro_Ecommerce";
+import RegistroTerminal from "./app/home/Registro_Terminal";
+import Error404 from "./app/home/Error404";
+import Index from "./app/home/Index2";
+import Terminal from "./app/home/Terminal";
 // eslint-disable-next-line
 import vocabularies from "../src/vocabularies";
 import { I18n } from "aws-amplify/utils";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
-import Tarjetas from "./app/intStore/Tarjetas";
+import Tarjetas from "./app/home/Tarjetas";
 import Qr from "./app/qr/Qr";
 import GaleriaImagenesQr from "./components/Qr/GaleriaImagenesQr";
 import { HelmetProvider } from "react-helmet-async";
@@ -26,6 +26,8 @@ import Metricas from "./app/metricas/Metricas";
 import Cobertura from "./app/cobertura/Cobertura";
 import Blur from "./app/blur/Blur";
 import PageWrapperToIndex from "./components/PageWrapper/PageWrapperToIndex";
+import Home from "./app/home/Home";
+import backgroundPurple from "./Img/Backkground_Purple.png";
 
 function App() {
   const pageDomain = window.location.host;
@@ -47,170 +49,162 @@ function App() {
   };
 
   return (
-    <HelmetProvider>
-      <Router>
-        <Routes>
-          <Route
-            path="/terminal"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <Terminal selectedOption={selectedOption} />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/ecommerce"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <Ecommerce />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/registro_principal"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <RegistroPrincipal />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/registro_terminal"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <RegistroTerminal />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/registro_ecommerce"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <RegistroEcommerce />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/gracias"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <Gracias />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/tarjetas"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <Tarjetas />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/qr"
-            element={
-              <PageWrapperQr selectedOption={selectedOption} handler={handler}>
-                <Qr />
-              </PageWrapperQr>
-            }
-          />
-          <Route
-            path="/qr/Standby/Galeria"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <GaleriaImagenesQr />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/"
-            exact
-            element={
-              <>
-                {pageDomain === "int.store" && (
-                  <PageWrapper
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Index />
-                  </PageWrapper>
-                )}
-                {pageDomain === "why.int.store" && (
-                  <>
-                    <Why />
-                  </>
-                )}
-                {pageDomain === "transactions.int.store" && (
-                  <>
-                    <Transactions />
-                  </>
-                )}
-                {pageDomain === "centro.int.store" && (
-                  <PageWrapperToIndex
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Centro />
-                  </PageWrapperToIndex>
-                )}
-                {pageDomain === "mision.int.store" && (
-                  <PageWrapper
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Mision />
-                  </PageWrapper>
-                )}
-                {pageDomain === "metricas.int.store" && (
-                  <PageWrapper
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Metricas />
-                  </PageWrapper>
-                )}
-                {pageDomain === "cobertura.int.store" && (
-                  <PageWrapper
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Cobertura />
-                  </PageWrapper>
-                )}
-                {pageDomain === "blurb.int.store" && (
-                  <PageWrapperToIndex
-                    selectedOption={selectedOption}
-                    handler={handler}
-                  >
-                    <Blur />
-                  </PageWrapperToIndex>
-                )}
-                {(pageDomain === "localhost:3000" ||
-                  pageDomain ===
-                    "https://ldn3vr0r-3000.usw3.devtunnels.ms/") && (
-                  <>
-                    <PageWrapperToIndex
+    <section
+      className="flex flex-col items-center w-full"
+      style={{
+        backgroundImage: `url(${backgroundPurple})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        height: "100vh",
+      }}
+    >
+      <HelmetProvider>
+        <Router>
+          <Routes>
+            <Route
+              path="/terminal"
+              element={<Terminal selectedOption={selectedOption} />}
+            />
+            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route
+              path="/registro_principal"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <RegistroPrincipal />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/registro_terminal"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <RegistroTerminal />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/registro_ecommerce"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <RegistroEcommerce />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/gracias"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <Gracias />
+                </PageWrapper>
+              }
+            />
+            <Route path="/tarjetas" element={<Tarjetas />} />
+            <Route
+              path="/qr"
+              element={
+                <PageWrapperQr
+                  selectedOption={selectedOption}
+                  handler={handler}
+                >
+                  <Qr />
+                </PageWrapperQr>
+              }
+            />
+            <Route
+              path="/qr/Standby/Galeria"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <GaleriaImagenesQr />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/"
+              exact
+              element={
+                <>
+                  {pageDomain === "int.store" && (
+                    <PageWrapper
                       selectedOption={selectedOption}
                       handler={handler}
                     >
                       <Index />
+                    </PageWrapper>
+                  )}
+                  {pageDomain === "why.int.store" && (
+                    <>
+                      <Why />
+                    </>
+                  )}
+                  {pageDomain === "transactions.int.store" && (
+                    <>
+                      <Transactions />
+                    </>
+                  )}
+                  {pageDomain === "centro.int.store" && (
+                    <PageWrapperToIndex
+                      selectedOption={selectedOption}
+                      handler={handler}
+                    >
+                      <Centro />
                     </PageWrapperToIndex>
-                  </>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <PageWrapper selectedOption={selectedOption} handler={handler}>
-                <Error404 />
-              </PageWrapper>
-            }
-          />
-        </Routes>
-      </Router>
-    </HelmetProvider>
+                  )}
+                  {pageDomain === "mision.int.store" && (
+                    <PageWrapper
+                      selectedOption={selectedOption}
+                      handler={handler}
+                    >
+                      <Mision />
+                    </PageWrapper>
+                  )}
+                  {pageDomain === "metricas.int.store" && (
+                    <PageWrapper
+                      selectedOption={selectedOption}
+                      handler={handler}
+                    >
+                      <Metricas />
+                    </PageWrapper>
+                  )}
+                  {pageDomain === "cobertura.int.store" && (
+                    <PageWrapper
+                      selectedOption={selectedOption}
+                      handler={handler}
+                    >
+                      <Cobertura />
+                    </PageWrapper>
+                  )}
+                  {pageDomain === "blurb.int.store" && (
+                    <PageWrapperToIndex
+                      selectedOption={selectedOption}
+                      handler={handler}
+                    >
+                      <Blur />
+                    </PageWrapperToIndex>
+                  )}
+
+                  {(pageDomain === "localhost:3000" ||
+                    pageDomain ===
+                      "https://ldn3vr0r-3000.usw3.devtunnels.ms/") && (
+                    <>
+                      <Home />
+                    </>
+                  )}
+                </>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <PageWrapper selectedOption={selectedOption} handler={handler}>
+                  <Error404 />
+                </PageWrapper>
+              }
+            />
+          </Routes>
+        </Router>
+      </HelmetProvider>
+    </section>
   );
 }
 
