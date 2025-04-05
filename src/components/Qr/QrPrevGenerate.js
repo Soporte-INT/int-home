@@ -50,7 +50,7 @@ const QrPrevGenerate = (props) => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        },
+        }
       );
 
       const blobResponse = new Blob([res.data], { type: "image/png" });

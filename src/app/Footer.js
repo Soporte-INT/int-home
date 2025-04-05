@@ -12,7 +12,8 @@ export default function Footer() {
   };
 
   return (
-    <div className="sm:relative sm:mt-4 lg:absolute lg:bottom-0 lg:left-0 lg:w-full lg:h-[100px] flex flex-col items-center justify-center gap-2 p-4">
+    // <div className="sm:relative sm:mt-4 lg:absolute lg:bottom-0 lg:left-0 lg:w-full lg:h-[100px] flex flex-col items-center justify-center gap-2 p-4">
+    <div className="absolute bottom-0 left-0 w-full h-[100px] flex flex-col items-center justify-center gap-2 p-4">
       <h3
         className="text-[16px] text-center text-white cursor-pointer"
         onClick={handleGoToBrand}

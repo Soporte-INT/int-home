@@ -90,16 +90,16 @@ export default function Transactions() {
         />
         <link rel="icon" href={logoBlack} />
       </Helmet>
-      <section className="fontRedHat flex h-full flex-col bg-black text-white lg:h-screen lg:flex-row">
+      <section className="fontRedHat flex h-full flex-col bg-black text-white lg:h-screen lg:flex-row w-full">
         <div className="flex w-full flex-col items-center justify-center ">
-          <section className="flex h-[400px] w-full flex-col items-center gap-5 px-7 sm:justify-start lg:w-[531px] lg:justify-center lg:px-0">
+          <section className="flex h-[400px] w-full flex-col items-center gap-5 px-7 lg:p-0 sm:pt-10 sm:justify-start lg:w-[531px] lg:justify-center lg:px-0">
             <img
               src={eliceWhite}
               alt="White Elice"
               className="cursor-pointer sm:w-36 lg:w-44"
               onClick={() => (window.location.href = "https://int.store/")}
             />
-            <h1 className="text-[34px] font-bold lg:text-[36px]">
+            <h1 className="sm:text-[30px] font-bold lg:text-[36px]">
               Total transacciones
             </h1>
             <div className="flex h-[40px] w-full items-center justify-center rounded-full bg-white text-black">
@@ -111,7 +111,7 @@ export default function Transactions() {
               <button
                 onClick={() => (window.location.href = "https://int.store/")}
               >
-                <p className="fontRoboto">
+                <p className="text-[14px]">
                   © Intelligent Networked Transactions LLC
                 </p>
               </button>
@@ -121,7 +121,9 @@ export default function Transactions() {
 
         <div className="flex w-full flex-col items-center justify-center ">
           <section className="flex h-full w-full flex-col items-center justify-center gap-5 sm:pt-0 lg:pt-10">
-            <h1 className="text-[30px] font-bold">Últimas transacciones</h1>
+            <h1 className="sm:text-[24px] lg:text-[30px] font-bold">
+              Últimas transacciones
+            </h1>
             <Input
               type="tel"
               onChange={handleSearchByID}

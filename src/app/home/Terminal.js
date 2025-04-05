@@ -37,7 +37,7 @@ const Terminal = ({ selectedOption }) => {
     scriptGoogle();
   }, []);
   return (
-    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] h-full w-full flex flex-col items-center justify-start relative text-white">
+    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] min-h-screen w-full flex flex-col items-center justify-start relative sm:overflow-auto lg:overflow-hidden">
       <Header />
       <section className="flex sm:flex-col lg:flex-row lg:items-center justify-start w-full">
         <div className="sm:w-[100%] lg:w-[50%] flex flex-col justify-start h-full">

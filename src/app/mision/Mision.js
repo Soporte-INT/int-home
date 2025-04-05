@@ -4,6 +4,7 @@ import coin from "../../Img/Coin.webp";
 import GraficaMission from "../../Img/GraficaMision.webp";
 import { I18n } from "aws-amplify/utils";
 import { Helmet } from "react-helmet-async";
+import Footer from "../Footer";
 
 const Mision = () => {
   return (
@@ -33,7 +34,7 @@ const Mision = () => {
           <button
             className="rounded-full bg-white font-bold text-primary-50 hover:bg-gray-30 sm:h-10 lg:h-14"
             onClick={() =>
-              (window.location.href = "https://intportal.vercel.app/registro")
+              (window.location.href = "https://app.int.store/registro")
             }
           >
             {I18n.get("MButton")}
@@ -50,25 +51,10 @@ const Mision = () => {
           <img
             src={GraficaMission}
             alt="GraficaMission"
-            className="sm:h-[250px] sm:w-full lg:h-[100%] lg:w-[90%]"
+            className="sm:h-[230px] sm:w-full lg:h-[95%] lg:w-[100%]"
           />
         </div>
-        <footer className="absolute bottom-5 flex w-full flex-col text-center text-white">
-          <p
-            className="cursor-pointer text-[15px] font-light"
-            onClick={() => (window.location.href = "https://int.store")}
-          >
-            {I18n.get("IBrand")}
-          </p>
-          <p
-            className="cursor-pointer text-[15px] font-light"
-            onClick={() =>
-              (window.location.href = "https://transactions.int.store")
-            }
-          >
-            {I18n.get("ILastTransactions")}
-          </p>
-        </footer>
+        <Footer />
       </section>
     </>
   );

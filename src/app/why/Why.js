@@ -78,7 +78,7 @@ export default function Why() {
           <p className="cursor-pointer" onClick={handleGoToHome}>
             © Intelligent Networked Transactions LLC
           </p>
-          <p className="cursor-pointer" onClick={handleGoToTransactions}>
+          <p className="cursor-pointer pt-2" onClick={handleGoToTransactions}>
             Últimas transacciones
           </p>
         </footer>

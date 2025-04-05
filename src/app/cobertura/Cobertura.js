@@ -201,7 +201,7 @@ const Cobertura = () => {
           </div>
           <div className="flex h-[614px] w-[300px] flex-col gap-2">
             <iframe
-              src="https://intportal.vercel.app/tuDominio/terminal/MXN_0"
+              src="https://app.int.store/tuDominio/terminal/MXN_0"
               title="TuDominio"
               className="h-[500px] w-full"
             ></iframe>

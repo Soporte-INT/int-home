@@ -43,13 +43,13 @@ export default function Home() {
     },
   ];
   return (
-    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] h-full w-full flex flex-col items-center justify-start relative">
+    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] min-h-screen w-full flex flex-col items-center justify-start relative sm:overflow-auto lg:overflow-hidden">
       <Header />
       <div className="flex flex-col items-center justify-start">
         <h3 className="sm:text-[24px] lg:text-[36px] font-bold text-center text-white">
           POTENCIALIZA
         </h3>
-        <h1 className="lg:text-[72px] sm:text-[40px] font-bold text-center text-white">
+        <h1 className="text-[4vw] sm:text-[5vw] font-bold text-center text-white">
           ¡TU NEGOCIO!
         </h1>
         <p className="sm:text-[14px] lg:text-[24px] font-light text-center text-white sm:px-[50px] lg:px-0">
@@ -62,7 +62,7 @@ export default function Home() {
         >
           Ver Demo
         </button>
-        <section className="flex flex-row items-center justify-center gap-5 mt-6 flex-wrap">
+        <section className="flex flex-row items-center justify-center gap-4 mt-6 flex-wrap w-full sm:px-[0%] lg:px-0">
           {data.map((item, index) => (
             <article
               key={index}
@@ -75,9 +75,9 @@ export default function Home() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="sm:w-[100px] sm:h-[100px] lg:w-[180px] lg:h-[180px] "
+                  className="sm:w-[100px] sm:h-[100px] lg:w-[180px] lg:h-[180px] max-w-full h-auto"
                 />
-                <h3 className="sm:text-[14px] lg:text-[24px] font-bold text-center sm:pt-5 lg:pt-1 text-white">
+                <h3 className="sm:text-[14px] lg:text-[24px] font-bold text-center pt-1 text-white">
                   {item.title}
                 </h3>
               </NavLink>

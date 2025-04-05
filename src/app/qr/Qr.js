@@ -1,6 +1,3 @@
-import logoEspañol from "../../Img/LogoEspanol.png";
-import logoingles from "../../Img/Logotipo.png";
-import background_Purple from "../../Img/Backkground_Purple.png";
 import QrGenerate from "../../components/Qr/QrGenerate";
 import QrPrevGenerate from "../../components/Qr/QrPrevGenerate";
 import { useEffect, useState, useRef } from "react";
@@ -11,6 +8,7 @@ import ModalMui from "../../components/Modal/ModalMui";
 import { scriptGoogle } from "../../lib/utils/scriptGoogle";
 import { Helmet } from "react-helmet-async";
 import { Alert } from "@mui/material";
+import LogoEspanol from "../../assets/tagEspanol.png";
 
 const Qr = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -92,33 +90,16 @@ const Qr = () => {
           content="Genera tantos QR como quieras completamente gratis, con QR de alta calidad."
         />
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-      </Helmet>
-      <div
-        className="relative flex w-full flex-col items-center sm:h-[1300px] sm:pt-[30%] lg:h-screen lg:pt-[8%]"
-        style={{
-          backgroundImage: `url(${background_Purple})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          fontFamily: "Red Hat Display",
-        }}
-      >
-        <section className="sm:hidden">
-          {language === "es" ? (
-            <img
-              src={logoEspañol}
-              alt="Logotipo Español"
-              className=" sm:h-[76px] sm:w-[268px] lg:h-[152px] lg:w-[533px]"
-            ></img>
-          ) : (
-            <img
-              src={logoingles}
-              alt="Logotipo Español"
-              className=" sm:h-[76px] sm:w-[268px] lg:h-[152px] lg:w-[533px]"
-            ></img>
-          )}
-        </section>
+      </Helmet>{" "}
+      <div className="relative flex w-full sm:flex-col items-center sm:h-[1300px] sm:pt-[1%] lg:h-screen lg:pt-[8%] overflow-auto">
+        <img
+          className="lg:absolute lg:block top-10 left-10 z-10 w-[100px] sm:hidden lg:w-[280px] cursor-pointer"
+          alt="Logotipo Español"
+          src={LogoEspanol}
+          onClick={() => (window.location.href = "https://centro.int.store")}
+        />
         <h1
-          className="font-bold text-white sm:mb-0 sm:hidden md:flex md:text-[40px] lg:mb-10 lg:text-[50px]"
+          className="font-bold text-white sm:mb-2 sm:text-[30px] md:flex md:text-[40px] lg:mb-10 lg:text-[50px]"
           style={{ fontFamily: "Red Hat Display" }}
         >
           {I18n.get("QrTitle2")}
@@ -136,7 +117,7 @@ const Qr = () => {
           {I18n.get("QrTitle5")}
         </h2> */}
 
-        <section className="flex justify-between sm:mt-[31px] sm:h-[840px] sm:flex-col sm:gap-[250px] lg:mt-[10px] lg:h-[400px] lg:w-[732px] lg:flex-row">
+        <section className="flex lg:flex-row sm:flex-col lg:gap-[250px] sm:gap-5">
           {/**Left */}
           <QrGenerate
             url={url}
@@ -200,12 +181,12 @@ const Qr = () => {
         >
           Casos de uso
         </button> */}
-        <footer className="absolute bottom-2 cursor-pointer text-center text-[16px] font-light text-white sm:mt-10 lg:mt-[200px]">
+        <footer className="lg:absolute lg:bottom-0 sm:relative cursor-pointer text-center text-[16px] font-light text-white sm:mt-10 lg:mt-[200px]">
           <p onClick={() => (window.location.href = "https://int.store")}>
             {I18n.get("IBrand")}
           </p>
           <p
-            className="fontRedHat cursor-pointer text-[14px] text-white"
+            className="fontRedHat cursor-pointer text-[16px] pb-1 text-white"
             onClick={() =>
               (window.location.href = "https://transactions.int.store")
             }

@@ -50,13 +50,14 @@ function App() {
 
   return (
     <section
-      className="flex flex-col items-center w-full"
+      className="flex flex-col items-center w-full text-white"
       style={{
         backgroundImage: `url(${backgroundPurple})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
+        overflow: "hidden",
       }}
     >
       <HelmetProvider>
@@ -100,17 +101,7 @@ function App() {
               }
             />
             <Route path="/tarjetas" element={<Tarjetas />} />
-            <Route
-              path="/qr"
-              element={
-                <PageWrapperQr
-                  selectedOption={selectedOption}
-                  handler={handler}
-                >
-                  <Qr />
-                </PageWrapperQr>
-              }
-            />
+            <Route path="/qr" element={<Qr />} />
             <Route
               path="/qr/Standby/Galeria"
               element={
@@ -124,14 +115,8 @@ function App() {
               exact
               element={
                 <>
-                  {pageDomain === "int.store" && (
-                    <PageWrapper
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Index />
-                    </PageWrapper>
-                  )}
+                  {pageDomain === "int.store" && <Home />}
+
                   {pageDomain === "why.int.store" && (
                     <>
                       <Why />
@@ -142,14 +127,7 @@ function App() {
                       <Transactions />
                     </>
                   )}
-                  {pageDomain === "centro.int.store" && (
-                    <PageWrapperToIndex
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Centro />
-                    </PageWrapperToIndex>
-                  )}
+                  {pageDomain === "centro.int.store" && <Centro />}
                   {pageDomain === "mision.int.store" && (
                     <PageWrapper
                       selectedOption={selectedOption}
@@ -174,20 +152,13 @@ function App() {
                       <Cobertura />
                     </PageWrapper>
                   )}
-                  {pageDomain === "blurb.int.store" && (
-                    <PageWrapperToIndex
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Blur />
-                    </PageWrapperToIndex>
-                  )}
+                  {pageDomain === "blurb.int.store" && <Blur />}
 
                   {(pageDomain === "localhost:3000" ||
                     pageDomain ===
                       "https://ldn3vr0r-3000.usw3.devtunnels.ms/") && (
                     <>
-                      <Home />
+                      <Qr />
                     </>
                   )}
                 </>
