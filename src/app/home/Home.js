@@ -57,7 +57,7 @@ export default function Home() {
         >
           Ver Demo
         </button>
-        <section className="flex flex-row items-center justify-center gap-4 mt-6 flex-wrap w-full sm:px-[0%] lg:px-0">
+        <section className="flex flex-row items-center justify-center gap-4 mt-5 flex-wrap w-full sm:px-[0%] lg:px-0">
           {data.map((item, index) => (
             <article
               key={index}
