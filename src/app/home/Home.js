@@ -38,7 +38,7 @@ export default function Home() {
     // },
   ];
   return (
-    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] min-h-screen w-full flex flex-col items-center justify-start relative sm:overflow-auto lg:overflow-hidden">
+    <section className="sm:px-[5%] lg:px-[10%] pt-[2%] min-h-screen w-full flex flex-col items-center justify-start relative sm:overflow-y-auto lg:overflow-hidden">
       <Header />
       <div className="flex flex-col items-center justify-start">
         <h3 className="sm:text-[24px] lg:text-[36px] font-bold text-center text-white">
@@ -52,7 +52,7 @@ export default function Home() {
           sin necesidad de una terminal bancaria
         </p>
         <button
-          className="sm:w-[380px] lg:h-14 sm:h-10 lg:w-[484px] bg-white h-14 rounded-full text-primary-40 mt-4 hover:bg-gray-30 duration-300"
+          className="sm:w-full lg:h-14 sm:h-10 lg:w-[484px] bg-white h-14 rounded-full text-primary-40 mt-4 hover:bg-gray-30 duration-300"
           onClick={handleGoToTerminal}
         >
           Ver Demo
