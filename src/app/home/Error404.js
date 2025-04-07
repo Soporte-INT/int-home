@@ -6,8 +6,7 @@ import PhoneTerminal from "../../Img/PhoneTerminal.png";
 
 const Error404 = () => {
   useEffect(() => {
-    window.location.href =
-      "https://intportal.vercel.app/tuDominio/terminal/MXN_0";
+    window.location.href = "https://int.store/tuDominio/terminal/MXN_0";
   }, []);
   const images = [Circleint, Imagentelefono, PhoneTerminal];
   const [positionCarousel, setPositionCarousel] = useState(0);

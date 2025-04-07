@@ -9,8 +9,8 @@ import RegistroTerminal from "./app/home/Registro_Terminal";
 import Error404 from "./app/home/Error404";
 import Index from "./app/home/Index2";
 import Terminal from "./app/home/Terminal";
-// eslint-disable-next-line
 import vocabularies from "../src/vocabularies";
+// eslint-disable-next-line
 import { I18n } from "aws-amplify/utils";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
 import Tarjetas from "./app/home/Tarjetas";
@@ -20,7 +20,6 @@ import { HelmetProvider } from "react-helmet-async";
 import Transactions from "./app/transactions/Transactions";
 import Centro from "./app/centro/Centro";
 import Why from "./app/why/Why";
-import PageWrapperQr from "./components/PageWrapper/PageWrapperQr";
 import Mision from "./app/mision/Mision";
 import Metricas from "./app/metricas/Metricas";
 import Cobertura from "./app/cobertura/Cobertura";
@@ -32,7 +31,7 @@ import backgroundPurple from "./Img/Backkground_Purple.png";
 function App() {
   const pageDomain = window.location.host;
   const [selectedOption, setSelectedOption] = useState(
-    localStorage.getItem("language") ?? "en"
+    localStorage.getItem("language") ?? "es"
   );
 
   I18n.setLanguage(selectedOption);
@@ -68,97 +67,32 @@ function App() {
               element={<Terminal selectedOption={selectedOption} />}
             />
             <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route
-              path="/registro_principal"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <RegistroPrincipal />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/registro_terminal"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <RegistroTerminal />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/registro_ecommerce"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <RegistroEcommerce />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/gracias"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <Gracias />
-                </PageWrapper>
-              }
-            />
+            <Route path="/registro_principal" element={<RegistroPrincipal />} />
+            <Route path="/registro_terminal" element={<RegistroTerminal />} />
+            <Route path="/registro_ecommerce" element={<RegistroEcommerce />} />
+            <Route path="/gracias" element={<Gracias />} />
             <Route path="/tarjetas" element={<Tarjetas />} />
             <Route path="/qr" element={<Qr />} />
-            <Route
-              path="/qr/Standby/Galeria"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <GaleriaImagenesQr />
-                </PageWrapper>
-              }
-            />
+            <Route path="/qr/Standby/Galeria" element={<GaleriaImagenesQr />} />
             <Route
               path="/"
               exact
               element={
                 <>
-                  {pageDomain === "int.store" && <Home />}
-
-                  {pageDomain === "why.int.store" && (
-                    <>
-                      <Why />
-                    </>
-                  )}
-                  {pageDomain === "transactions.int.store" && (
-                    <>
-                      <Transactions />
-                    </>
-                  )}
+                  {/* {pageDomain === "int.store" && <Home />} */}
+                  {pageDomain === "inicio.int.store" && <Home />}
+                  {pageDomain === "why.int.store" && <Why />}
+                  {pageDomain === "transactions.int.store" && <Transactions />}
                   {pageDomain === "centro.int.store" && <Centro />}
-                  {pageDomain === "mision.int.store" && (
-                    <PageWrapper
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Mision />
-                    </PageWrapper>
-                  )}
-                  {pageDomain === "metricas.int.store" && (
-                    <PageWrapper
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Metricas />
-                    </PageWrapper>
-                  )}
-                  {pageDomain === "cobertura.int.store" && (
-                    <PageWrapper
-                      selectedOption={selectedOption}
-                      handler={handler}
-                    >
-                      <Cobertura />
-                    </PageWrapper>
-                  )}
+                  {pageDomain === "mision.int.store" && <Mision />}
+                  {pageDomain === "metricas.int.store" && <Metricas />}
+                  {pageDomain === "cobertura.int.store" && <Cobertura />}
                   {pageDomain === "blurb.int.store" && <Blur />}
-
                   {(pageDomain === "localhost:3000" ||
                     pageDomain ===
                       "https://ldn3vr0r-3000.usw3.devtunnels.ms/") && (
                     <>
-                      <Qr />
+                      <Home />
                     </>
                   )}
                 </>

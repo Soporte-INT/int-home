@@ -1,6 +1,9 @@
 import LogoEspanol from "../assets/tagEspanol.png";
 
 export default function Header() {
+  // const protocol = process.env.REACT_APP_API_PROTOCOL;
+  // const domain = process.env.REACT_APP_API_DOMAIN;
+
   const handleGoToCentro = () => {
     window.location.href = "https://centro.int.store";
   };

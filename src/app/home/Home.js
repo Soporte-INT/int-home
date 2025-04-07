@@ -1,30 +1,25 @@
 import React, { useEffect } from "react";
 import "../../components/Style/Home2.scss";
 import "../../components/Style/flexed-columns.scss";
-import {
-  Boton,
-  Divcenter,
-  Divcolumns,
-  Divcolumn,
-  Homecomponent,
-  H5Home,
-  H1Home,
-  Bottomtext,
-} from "./StyledComponents.js";
+
 import terminal from "../../assets/terminal.webp";
 import ecomerce from "../../assets/e-commerce.webp";
 import tarjetas from "../../assets/tarjetas.webp";
 import { I18n } from "aws-amplify/utils";
 import { NavLink } from "react-router-dom";
 import { scriptGoogle } from "../../lib/utils/scriptGoogle.js";
-import { Helmet } from "react-helmet-async";
 import Header from "../Header.js";
 import Footer from "../Footer.js";
 
 export default function Home() {
+  useEffect(() => {
+    scriptGoogle();
+  }, []);
+
   const handleGoToTerminal = () => {
     window.location.href = "https://int-front.vercel.app/TuDominio";
   };
+
   const data = [
     {
       title: "TERMINAL DIGITAL",
@@ -36,11 +31,11 @@ export default function Home() {
       href: "/ecommerce",
       image: ecomerce,
     },
-    {
-      title: "TARJETAS",
-      href: "/tarjetas",
-      image: tarjetas,
-    },
+    // {
+    //   title: "TARJETAS",
+    //   href: "/tarjetas",
+    //   image: tarjetas,
+    // },
   ];
   return (
     <section className="sm:px-[5%] lg:px-[10%] pt-[2%] min-h-screen w-full flex flex-col items-center justify-start relative sm:overflow-auto lg:overflow-hidden">
@@ -66,7 +61,7 @@ export default function Home() {
           {data.map((item, index) => (
             <article
               key={index}
-              className="flex flex-col items-center justify-center bg-primary-20 rounded-2xl border-white border sm:w-[180px] sm:h-[210px] lg:h-[258px] lg:w-[370px] cursor-pointer hover:scale-105 transition-transform duration-300 lg:p-0 sm:p-2"
+              className="flex flex-col items-center justify-center bg-primary-20 rounded-2xl border-white border sm:w-[220px] sm:h-[250px] lg:h-[258px] lg:w-[370px] cursor-pointer hover:scale-105 transition-transform duration-300 lg:p-0 sm:p-2"
             >
               <NavLink
                 to={item.href}

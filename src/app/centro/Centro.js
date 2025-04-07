@@ -28,10 +28,10 @@ export default function Centro() {
       text: "Misión",
       link: "https://mision.int.store",
     },
-    {
-      text: "Metricas",
-      link: "https://metricas.int.store",
-    },
+    // {
+    //   text: "Metricas",
+    //   link: "https://metricas.int.store",
+    // },
     {
       text: "Cobertura",
       link: "https://cobertura.int.store",

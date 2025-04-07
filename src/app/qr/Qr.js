@@ -102,7 +102,7 @@ const Qr = () => {
           className="font-bold text-white sm:mb-2 sm:text-[30px] md:flex md:text-[40px] lg:mb-10 lg:text-[50px]"
           style={{ fontFamily: "Red Hat Display" }}
         >
-          {I18n.get("QrTitle2")}
+          Crea tu código QR gratis
         </h1>
         {/* <h2 className="font-bold text-white sm:hidden md:flex md:text-[40px] lg:text-[50px]">
           {I18n.get("QrTitle1")}
