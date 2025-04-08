@@ -3,11 +3,16 @@ import "../../components/Style/Error404.scss";
 import Imagentelefono from "../../Img/PhoneWithTerminal.png";
 import Circleint from "../../Img/Circle_Int.png";
 import PhoneTerminal from "../../Img/PhoneTerminal.png";
-
+import { I18n } from "aws-amplify/utils";
+import { NavLink } from "react-router-dom";
+import Carrusel from "../../components/Error404/Carrusel";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import Footer from "../Footer";
 const Error404 = () => {
-  useEffect(() => {
-    window.location.href = "https://int.store/tuDominio/terminal/MXN_0";
-  }, []);
+  // useEffect(() => {
+  //   window.location.href = "https://int.store/tuDominio/terminal/MXN_0";
+  // }, []);
   const images = [Circleint, Imagentelefono, PhoneTerminal];
   const [positionCarousel, setPositionCarousel] = useState(0);
   const moveToRight = () => {
@@ -19,7 +24,6 @@ const Error404 = () => {
 
   return (
     <>
-      {/*
       <div
         style={{
           fontFamily: "Red Hat Display",
@@ -28,7 +32,6 @@ const Error404 = () => {
         className="justify-betweens carrusel-component relative flex h-full w-full  flex-col sm:px-[16px] sm:py-[70px] md:px-[80px] lg:px-[100px] lg:pt-[100px]"
       >
         <section className="flex sm:flex-col lg:h-[633px] lg:w-[1236px] lg:flex-row">
-
           <div className="lg:w-[50%] lg:pt-[115px]">
             <section className={`text-white`}>
               <h4 className="sm:text-[16px] md:text-center md:text-[20px] lg:text-start">
@@ -40,11 +43,14 @@ const Error404 = () => {
               <p className="mt-4 font-light sm:text-[14px] sm:leading-[18px] md:text-[20px] md:leading-[30px] lg:text-[24px] lg:leading-[32px]">
                 {I18n.get("EText")}
               </p>
-              <NavLink to="/registro_principal">
-                <button className="w-full rounded-[32px] bg-white text-[#2A2FAB] sm:mt-[24px] sm:h-[40px] sm:text-[14px] md:h-[44px] md:text-[16px] lg:mt-[32px] lg:h-[60px] lg:text-[18px]">
-                  {I18n.get("Error404Button")}
-                </button>
-              </NavLink>
+              <button
+                className="w-full rounded-[32px] bg-white text-[#2A2FAB] sm:mt-[24px] sm:h-[40px] sm:text-[14px] md:h-[44px] md:text-[16px] lg:mt-[32px] lg:h-[60px] lg:text-[18px]"
+                onClick={() => {
+                  window.location.href = "https://int.store/registro";
+                }}
+              >
+                {I18n.get("Error404Button")}
+              </button>
             </section>
           </div>
           <div className="relative sm:h-[375px] md:h-[470px] lg:h-auto lg:w-[50%]">
@@ -53,12 +59,24 @@ const Error404 = () => {
               moveToRight={moveToRight}
               moveToLeft={moveToLeft}
             />
-            <button className="absolute top-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white sm:right-0 md:right-5 lg:right-0">
-              <img src={chevron} alt="chevron" onClick={moveToRight} />
+            {/* <button className="absolute top-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white sm:right-0 md:right-5 lg:right-0">
+              <ArrowBackIosNewRoundedIcon
+                sx={{
+                  color: "#2A2FAB",
+                  fontSize: "15px",
+                }}
+                onClick={moveToRight}
+              />
             </button>
             <button className="absolute top-1/2 z-10 flex h-9 w-9 rotate-180 items-center justify-center rounded-full bg-white sm:left-0 md:left-5 lg:left-0">
-              <img src={chevron} alt="chevron" onClick={moveToLeft} />
-            </button>
+              <ArrowBackIosNewRoundedIcon
+                sx={{
+                  color: "#2A2FAB",
+                  fontSize: "15px",
+                }}
+                onClick={moveToLeft}
+              />
+            </button> */}
             <section className="absolute bottom-0 left-0 right-0 flex justify-center gap-4 pb-4">
               {images.map((image, index) => (
                 <div
@@ -71,10 +89,8 @@ const Error404 = () => {
             </section>
           </div>
         </section>
-        <p className="absolute left-0 right-0 text-center text-white sm:bottom-5 sm:text-[16px] md:bottom-10 md:text-[20px] ">
-          {I18n.get("IBrand")}
-        </p>
-            </div>*/}
+        <Footer />
+      </div>
     </>
   );
 };

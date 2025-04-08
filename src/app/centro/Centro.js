@@ -13,8 +13,8 @@ export default function Centro() {
       link: "https://why.int.store",
     },
     {
-      text: "Home",
-      link: "https://int.store",
+      text: "Inicio",
+      link: "https://inicio.int.store",
     },
     {
       text: "App",
@@ -22,7 +22,7 @@ export default function Centro() {
     },
     {
       text: "QR",
-      link: "https://int.store/qr",
+      link: "https://inicio.int.store/qr",
     },
     {
       text: "Misión",
@@ -40,6 +40,10 @@ export default function Centro() {
       text: "Blurb",
       link: "https://blurb.int.store",
     },
+    {
+      text: "Blog",
+      link: "https://blog.int.store/",
+    },
   ];
 
   return (
@@ -54,10 +58,10 @@ export default function Centro() {
           <img
             src={logo_white}
             alt="Logotipo Español"
-            className="sm:w-[400px] lg:w-[698px]"
+            className="sm:w-[400px] lg:w-[698px] mb-2"
           ></img>
-          <div className="h-3 w-1/2 bg-white sm:hidden lg:block"></div>
-          <p className="w-full sm:text-[20px] text-justify text-white lg:text-[31px]">
+          {/* <div className="h-3 w-1/2 bg-white sm:hidden lg:block"></div> */}
+          <p className="w-full sm:text-[20px] text-justify  text-white lg:text-[31px]">
             {I18n.get("CText1")}
           </p>
           <section className="flex w-full flex-row flex-wrap items-center gap-5 justify-center">

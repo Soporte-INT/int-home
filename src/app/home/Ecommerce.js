@@ -30,7 +30,7 @@ const Ecommerce = ({ selectedOption }) => {
   ];
 
   const handleGoToTerminal = () => {
-    window.location.href = "https://int-front.vercel.app/TuDominio";
+    window.location.href = "https://int.store/tuDominio";
   };
 
   useEffect(() => {

@@ -7,7 +7,6 @@ import Gracias from "./app/home/Gracias";
 import RegistroEcommerce from "./app/home/Registro_Ecommerce";
 import RegistroTerminal from "./app/home/Registro_Terminal";
 import Error404 from "./app/home/Error404";
-import Index from "./app/home/Index2";
 import Terminal from "./app/home/Terminal";
 import vocabularies from "../src/vocabularies";
 // eslint-disable-next-line
@@ -98,14 +97,7 @@ function App() {
                 </>
               }
             />
-            <Route
-              path="*"
-              element={
-                <PageWrapper selectedOption={selectedOption} handler={handler}>
-                  <Error404 />
-                </PageWrapper>
-              }
-            />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </Router>
       </HelmetProvider>

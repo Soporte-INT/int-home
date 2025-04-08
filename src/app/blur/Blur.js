@@ -13,15 +13,15 @@ const Blur = () => {
     },
     {
       text: "Home",
-      link: "https://int.store",
+      link: "https://inicio.int.store",
     },
     {
       text: "App",
-      link: "https://app.int.store",
+      link: "https://inicio.int.store",
     },
     {
       text: "QR",
-      link: "https://int.store/qr",
+      link: "https://inicio.int.store/qr",
     },
     {
       text: "Misión",
@@ -39,6 +39,10 @@ const Blur = () => {
       text: "Centro",
       link: "https://centro.int.store",
     },
+    {
+      text: "Blog",
+      link: "https://blog.int.store/",
+    },
   ];
   return (
     <>
@@ -52,9 +56,9 @@ const Blur = () => {
           <img
             src={logo_white}
             alt="Logotipo Español"
-            className="sm:w-[400px] lg:w-[698px]"
+            className="sm:w-[400px] lg:w-[698px] mb-2"
           ></img>
-          <div className="h-3 w-1/2 bg-white sm:hidden lg:block"></div>
+          {/* <div className="h-3 w-1/2 bg-white sm:hidden lg:block"></div> */}
           <p className="w-full text-center text-[16px] text-white lg:text-[20px]">
             {I18n.get("BText1")}
           </p>

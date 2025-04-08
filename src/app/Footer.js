@@ -8,7 +8,7 @@ export default function Footer() {
 
   const handleGoToBrand = () => {
     // Usamos window.location.replace para reemplazar la URL actual
-    window.location.replace("https://int.store");
+    window.location.replace("https://inicio.int.store");
   };
 
   return (
